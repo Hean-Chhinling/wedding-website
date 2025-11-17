@@ -1803,5 +1803,94 @@ form label {
   opacity: 0;
 }
 
+/* Dedicated placeholder */
+.story-spacer {
+    position: relative;
+    width: 80%;
+    height: 350px;
+    margin: 40px auto; /* center on page */
+    overflow: hidden;
+
+    border-radius: 20px;        /* rounded corners */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25); /* soft shadow */
+}
+
+/* Shared styling for both sections */
+.person-section {
+    width: 80%;
+    margin: 50px auto;
+    padding: 40px 20px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Slideshow box */
+.person-slideshow {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+
+    border-radius: 20px;
+    margin-bottom: 25px;
+
+    /* Put slideshow images in a row */
+    display: flex;
+    width: 300%;
+    animation: scrollImages 25s infinite linear;
+}
+
+/* Each background image */
+.person-slideshow div {
+    flex: 1;
+    background-size: cover;     /* fill container */
+    background-position: center;
+    background-repeat: no-repeat;
+
+    animation: zoomImage 25s ease-in-out infinite;
+}
+
+/* Text area */
+.person-content {
+    text-align: center;
+}
+
+.person-content h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-family: "Sacramento", cursive;
+}
+
+.person-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Scroll animation (same as story block) */
+@keyframes scrollImages {
+    0%   { transform: translateX(0); }
+    30%  { transform: translateX(0); }
+
+    33%  { transform: translateX(-33.333%); }
+    63%  { transform: translateX(-33.333%); }
+
+    66%  { transform: translateX(-66.666%); }
+    95%  { transform: translateX(-66.666%); }
+
+    100% { transform: translateX(0); }
+}
+
+/* Slow zoom animation */
+@keyframes zoomImage {
+    0%   { transform: scale(1.05); }
+    50%  { transform: scale(1.10); }
+    100% { transform: scale(1.05); }
+}
+
+
+
 /*# sourceMappingURL=style.css.map */
 
