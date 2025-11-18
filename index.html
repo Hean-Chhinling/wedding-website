@@ -5,94 +5,141 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Welcome | Bride ❤️ Groom</title>
 
-<!-- Fonts -->
-
 <!-- Theme style  -->
-<link rel="stylesheet" href="css/style.css"> -->
+<link rel="stylesheet" href="css/style.css">
 
-
-<!-- Inline Styles -->
 <style>
-    /* Reset and base */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+
+/* Reset & base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+
+/* Background slider container */
+.bg-slider {
+    position: fixed;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    animation: bgShuffle 20s infinite;
+    z-index: 0;
+    transition: background-image 5s ease-in-out;
+}
+
+/* Track */
+.bg-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+}
+
+/* Single image */
+.bg-track img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Background shuffle animation */
+@keyframes bgShuffle {
+    /* Image 1 - pause */
+    0%, 20% {
+        transform: translateX(0);
     }
 
-    html, body {
-        height: 100%;
+    /* Slide to image 2 */
+    25%, 45% {
+        transform: translateX(-100%);
     }
 
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: url('images/bg.jpg') center/cover no-repeat;
-        position: relative;
-        overflow: hidden;
+    /* Slide to image 3 */
+    50%, 70% {
+        transform: translateX(-200%);
     }
 
-    /* Dark overlay */
-    .overlay {
-        position: absolute;
-        inset: 0;
-        background: rgba(0,0,0,0.5);
-        z-index: 1;
+    /* Slide to image 4 */
+    75%, 95% {
+        transform: translateX(-300%);
     }
 
-    /* Centered content container */
-    .welcome-content {
-        position: relative;
-        z-index: 2;
-        text-align: center;
-        color: #fff !important;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px; /* space between h1, h2, button */
-        padding: 20px;
+    /* Loop back */
+    100% {
+        transform: translateX(0);
     }
+}
 
-    /* Heading styles */
-    h1 {
-        font-family: 'Sacramento', cursive;
-        font-size: 80px;
-    }
 
-    h2 {
-        font-family: 'Work Sans', sans-serif;
-        font-size: 24px;
-        font-weight: 400;
-    }
+/* Dark overlay */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 5;
+}
 
-    /* Button styles */
-    .enter-btn {
-        padding: 12px 40px;
-        color: #000;
-        background: #fff;
-        border-radius: 30px;
-        font-size: 18px;
-        font-weight: bold;
-        text-decoration: none;
-        transition: all 0.3s ease;
-    }
+/* Centered content */
+.welcome-content {
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
 
-    .enter-btn:hover {
-        background: #f0e7e7;
-        transform: scale(1.05);
-    }
+/* Text & button */
+h1 {
+    font-family: 'Sacramento', cursive;
+    font-size: 80px;
+    color: #fff;
+}
 
+h2 {
+    font-size: 24px;
+    color: #fff;
+}
+
+.enter-btn {
+    padding: 12px 40px;
+    color: #000;
+    background: #fff;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.enter-btn:hover {
+    transform: scale(1.05);
+    background: #f0e7e7;
+}
 
 </style>
 </head>
+
 <body>
 
+    <!-- BACKGROUND SLIDESHOW -->
+    <div class="bg-slider">
+        <div class="bg-track">
+            <img src="images/bg.jpg">
+            <img src="images/RS1.jpg">
+            <img src="images/RS2.jpg">
+            <img src="images/RS3.jpg">
+        </div>
+    </div>
+
+    <!-- Dark overlay -->
     <div class="overlay"></div>
 
+    <!-- Centered content -->
     <div class="welcome-content">
-        <h1 style="color: #fff;">Bride <br>&<br>Groom</h1>
-        <h2 style="color: #fff;">We invite you to celebrate our special day</h2>
+        <h1>Bride <br>&<br> Groom</h1>
+        <h2>We invite you to celebrate our special day</h2>
         <a class="enter-btn" href="welcomepage.html">Welcome!</a>
     </div>
 

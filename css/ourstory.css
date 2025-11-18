@@ -1,0 +1,55 @@
+/* TIMELINE CONTAINER */
+.wedding-timeline {
+    position: relative;
+    margin: 60px auto;
+    padding-left: 30px;
+    border-left: 3px solid #d4af37; /* gold */
+}
+
+/* EACH ITEM */
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    padding-left: 40px;
+}
+
+/* IMAGE MARKER */
+.timeline-img {
+    position: absolute;
+    left: -35px;
+    top: 0;
+    width: 60px;
+    height: 60px;
+}
+
+.timeline-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #d4af37; /* gold ring */
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* TEXT BLOCK */
+.timeline-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #d4af37;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.timeline-content h3 {
+    margin-top: 0;
+    font-weight: bold;
+}
+
+/* YEAR / DATE */
+.timeline-year {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #d4af37;
+    font-size: 16px;
+}
